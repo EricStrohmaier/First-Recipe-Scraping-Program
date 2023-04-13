@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Find Your Recipe</title>
+</head>
+<body>
+<div class="box">
+<div class="header-box">
+    <h1>Find Your Recipe</h1>
+    <h2>from the Blog-Website  <a href="https://pinchofyum.com/">pinchofyum.com</a></h2>
+</div>
+  
+        <form action="/" method="POST" class="check">
+              <div class="text-box">
+        <label for="veggi"><input type="checkbox" name="veggi" class="checkbox"  id="veggi" > Vegetarian Super-Recipes</label> 
+        <label for="vegan"><input type="checkbox"name="vegan" class="checkbox" id="vegan"> Vegan Power-Planter</label>
+        <label for="dessert"><input type="checkbox" name="dessert" class="checkbox" id="dessert"> Dessert-Hunter</label>
+        <label for="fish"><input type="checkbox" name="fish" class="checkbox" id="fish"> Fish-Fecipes</label>
+        <label for="all"><input type="checkbox" name="all" class="checkbox" id="all">   Give me ALL the Recipes</label>
+        <button type="submit">Let´s Go</button>
+     </div>
+    </form>
+    <div class="print-values">
+        <% if (recipesArray) { %>
+          <ul>
+            <% for (let i = 0; i < recipesArray.length; i++) { %>
+              <li><a href="<%= recipesArray[i].link %>" target="_blank"><%= recipesArray[i].title %></a></li>
+            <% }} %>
+          </ul>
+      </div>
+    </div>
+    <div class="footer">
+        <p>made by Eric Strohmaier</p>
+    </div>
+</body>
+</html>
